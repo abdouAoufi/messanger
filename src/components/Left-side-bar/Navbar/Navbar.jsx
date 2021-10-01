@@ -11,7 +11,6 @@ export default function Navbar() {
         alignItems: "center",
         minWidth: "100%",
         minHeight: "52px",
-       
         py: 0.8,
       }}
     >

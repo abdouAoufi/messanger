@@ -1,6 +1,11 @@
 import React from "react";
 import Box from "@mui/material/Box";
+import Navbar from "./Navbar/Navbar";
 
 export default function RightSideBar() {
-  return <Box typography="subtitle" sx={{ flexGrow: 1 }}></Box>;
+  return (
+    <Box sx={{ flexGrow: 1 }}>
+      <Navbar />
+    </Box>
+  );
 }
