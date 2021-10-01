@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Separator = styled.div`
-  width: ${(props) => (props.mini ? "90%" : "100%")};
+  width: 100%;
   height: 1px;
-  margin: 1.2rem 0;
+  margin-top: 2.2rem;
   background-color: #c4c4c4;
 `;

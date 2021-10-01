@@ -6,12 +6,12 @@ export default function Navbar() {
   return (
     <Box
       sx={{
-        display: { xs: "none", md: "flex" },
+        display: { xs: "none", lg: "flex" },
         justifyContent: "space-between",
         alignItems: "center",
-        minWidth: "90%",
+        minWidth: "100%",
         minHeight: "52px",
-        px: 2,
+       
         py: 0.8,
       }}
     >

@@ -4,14 +4,14 @@ import Box from "@mui/material/Box";
 
 export default function SearchBar() {
   return (
-    <Box sx={{ display: "flex", width: "100%", mt: { xs: 2, sm: 0.35 } }}>
-      <Input placeholder="Search Messenger"/> 
+    <Box sx={{ display: "flex", width: "100%", mt: { xs: 2, lg: 0.35 } }}>
+      <Input placeholder="Search Messenger" />
     </Box>
   );
 }
 
 const Input = styled.input`
-  width: 85%;
+  width: 100%;
   margin: 0 auto;
   outline: none;
   background-color: #e4e4eb;
