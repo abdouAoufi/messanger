@@ -6,15 +6,6 @@ export default function ProfileContainer() {
   return (
     <Box sx={{ width: "100%" , overFlow : "scroll" }}>
       <ProfileCard />
-      <ProfileCard />
-      <ProfileCard />
-      <ProfileCard />
-      <ProfileCard />
-      <ProfileCard />
-      <ProfileCard />
-      <ProfileCard />
-    
-      
     </Box>
   );
 }

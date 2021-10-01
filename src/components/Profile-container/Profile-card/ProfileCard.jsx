@@ -34,6 +34,11 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   margin: 1rem 0;
+  padding : 4px;
+  border-radius: 8px;
+  &:hover {
+    background-color: #eeeeee;
+  }
 `;
 
 const InnerWrapper = styled.div`
@@ -45,4 +50,5 @@ const InnerWrapper = styled.div`
   @media (min-width: 1024px) {
     justify-content: start;
   }
+ 
 `;
