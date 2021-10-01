@@ -8,7 +8,6 @@ export default function MainIcons() {
   return (
     <IconContainer>
       <CallIcon sx={iconConfiguratoin} />
-      <VideocamIcon sx={iconConfiguratoin} />
       <InfoIcon sx={iconConfiguratoin} />
     </IconContainer>
   );
