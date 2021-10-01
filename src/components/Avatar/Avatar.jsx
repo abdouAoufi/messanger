@@ -7,9 +7,9 @@ export default function AvatarContainer({ firstLetter, size }) {
       <Avatar
         sx={{
           bgcolor: "#feb062",
-          height: size === "mini" ? 36 : 56,
-          width: size === "mini" ? 36 : 56,
-          mr: 1.5,
+          height: size === "mini" ? 36 : size === "tiny" ? 30 : 56,
+          width: size === "mini" ? 36 : size === "tiny" ? 30 : 56,
+          mr: size === "tiny" ? 1.0 : 1.5,
         }}
       >
         {firstLetter}
