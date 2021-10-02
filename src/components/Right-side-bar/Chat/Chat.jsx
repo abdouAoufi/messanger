@@ -5,9 +5,14 @@ import MessageHolder from "./MessageHolder/MessageHolder";
 
 export default function Chat() {
   return (
-    <>
+    <Wrapper>
       <ProfileContainer />
       <MessageHolder />
-    </>
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.div`
+  max-height: 100vh;
+  overflow: scroll;
+`;

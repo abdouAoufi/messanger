@@ -7,6 +7,24 @@ export default function MessageHolder() {
     <ChatWrapper>
       <MessageSent />
       <MessageRecived />
+      <MessageRecived />
+      <MessageRecived />
+      <MessageSent />
+      <MessageSent />
+      <MessageRecived />
+      <MessageRecived />
+      <MessageRecived />
+      <MessageSent />
+      <MessageSent />
+      <MessageRecived />
+      <MessageRecived />
+      <MessageRecived />
+      <MessageSent />
+      <MessageSent />
+      <MessageRecived />
+      <MessageRecived />
+      <MessageRecived />
+      <MessageSent />
     </ChatWrapper>
   );
 }
