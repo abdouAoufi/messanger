@@ -11,7 +11,6 @@ export default function MessageRecived({ reciver }) {
 }
 
 const Messagee = styled.div`
-  clear: both;
   width : fit-content;
   max-width: 45%;
   padding:  0.75rem;

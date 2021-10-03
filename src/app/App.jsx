@@ -4,13 +4,14 @@ import LeftSideBar from "../components/Left-side-bar/LeftSideBar";
 
 function App() {
   return (
-    <>
+    <div>
       <Layout>
         <LeftSideBar />
         <RightSideBar />
       </Layout>
-    </>
+    </div>
   );
 }
 
 export default App;
+

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Avatar from "../../../../Avatar/Avatar";
 
-export default function MessageSent({ reciver }) {
+export default function MessageSent({ last }) {
   return (
     <Wrapper>
       <Messagee>Hello</Messagee>
@@ -26,5 +26,5 @@ const Wrapper = styled.div`
   float: right;
   clear : both;
   display: flex;
-  justify-content: end;
+  flex-direction: row-reverse;
 `;

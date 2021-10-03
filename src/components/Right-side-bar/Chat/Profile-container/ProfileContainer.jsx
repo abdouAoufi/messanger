@@ -5,7 +5,7 @@ import Avatar from "../../../Avatar/Avatar";
 
 export default function ProfileContainer() {
   return (
-    <Box sx={{ mt: 4, width: "100%" }}>
+    <Box sx={{ mt: 12, width: "100%" }}>
       <ProfileWrapper>
         <Avatar firstLetter="A" />
         <Box

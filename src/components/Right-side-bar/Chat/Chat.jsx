@@ -2,17 +2,17 @@ import React from "react";
 import styled from "styled-components";
 import ProfileContainer from "./Profile-container/ProfileContainer";
 import MessageHolder from "./MessageHolder/MessageHolder";
+import BottomBar from "./Bottom-bar/BottomBar";
 
 export default function Chat() {
   return (
     <Wrapper>
       <ProfileContainer />
       <MessageHolder />
-    </Wrapper>
+    </Wrapper> 
   );
 }
 
 const Wrapper = styled.div`
-  max-height: 100vh;
   overflow: scroll;
 `;
