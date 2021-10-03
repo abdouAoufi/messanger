@@ -5,15 +5,16 @@ import Avatar from "../../../../Avatar/Avatar";
 export default function MessageRecived({ reciver }) {
   return (
     <Wrapper>
+      <Avatar size="tiny" firstLetter="A" />
       <Messagee>Hello its me here we can have </Messagee>
     </Wrapper>
   );
 }
 
 const Messagee = styled.div`
-  width : fit-content;
+  width: fit-content;
   max-width: 45%;
-  padding:  0.75rem;
+  padding: 0.75rem;
   border-radius: 1.5rem;
   margin-top: 8px;
   background-color: #e4e6eb;
@@ -24,4 +25,6 @@ const Messagee = styled.div`
 const Wrapper = styled.div`
   width: 100%;
   float: left;
+  display: flex;
+  align-items: center;
 `;

@@ -32,5 +32,4 @@ const ChatWrapper = styled.div`
   align-items: center;
   height: fit-content;
   overflow-y: scroll;
-  border: 1px solid black;
 `;
