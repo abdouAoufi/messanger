@@ -11,7 +11,6 @@ export default function LeftSideBar() {
       sx={{
         position: "relative",
         margin: "0 auto",
-        minWidth: "100px",
         borderRight: "1px solid #e4e6eb",
         overflow: "scroll",
         minWidth: { xs: "100px", lg: "360px" },
