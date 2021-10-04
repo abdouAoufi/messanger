@@ -9,6 +9,7 @@ export default function Title({ children }) {
       variant="h4"
       component="h2"
       fontWeight="bold"
+      color="#3f3b3b"
     >
       {children}
     </Typography>
