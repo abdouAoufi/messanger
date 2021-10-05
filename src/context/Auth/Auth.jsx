@@ -1,12 +1,15 @@
 import { createContext, useState } from "react";
-import { getAuthInfo } from "../../services/auth-service";
+import { getAuthInfo, getUserInfo } from "../../services/auth-service";
 
 export const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
-  const [isAuth, setAuth] = useState(JSON.parse(getAuthInfo()));
+  const isAuthLocal = JSON.parse(getAuthInfo()) || false;
+  const userInfoLocal = JSON.parse(getUserInfo()) || undefined;
+  const [isAuth, setAuth] = useState(isAuthLocal);
+  const [userInfo, setUserInfo] = useState(userInfoLocal);
   return (
-    <AuthContext.Provider value={{ isAuth, setAuth }}>
+    <AuthContext.Provider value={{ isAuth, setAuth, userInfo, setUserInfo }}>
       {children}
     </AuthContext.Provider>
   );

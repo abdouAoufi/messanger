@@ -24,7 +24,7 @@ const reducer = (state, action) => {
 
 function GetStarted() {
   const history = useHistory();
-  const { isAuth, setAuth } = React.useContext(AuthContext);
+  const { isAuth, setAuth, setUserInfo } = React.useContext(AuthContext);
   React.useLayoutEffect(() => {
     console.log(isAuth);
     if (isAuth) {
@@ -56,8 +56,9 @@ function GetStarted() {
       name: name,
       occupation: occupation || "Awesome guest",
     };
-    saveSession();
+    saveSession(userInformation);
     setAuth(true);
+    setUserInfo(userInformation);
     goHome();
   };
 
