@@ -5,6 +5,8 @@ import styled from "styled-components";
 import { Typography } from "@mui/material";
 import Title from "../../components/Typography/Title";
 import Button from "../../components/Button/Button";
+import { APP_DESCRIPTION } from "../../assests";
+import { Link } from "react-router-dom";
 
 function GetStarted() {
   return (
@@ -27,13 +29,12 @@ function GetStarted() {
         variant="p"
         component="p"
       >
-        Welcome to Messenger! simple chat app used for instance texting. The
-        idea behid it is stright forward. Write your name and start chating
-        there is no need for critical informations like email and phone number.
-        Click get started and slide into.
+        {APP_DESCRIPTION}
       </Typography>
 
-      <Button>Get started</Button>
+      <Link to="/setup">
+        <Button>Get started</Button>
+      </Link>
     </Box>
   );
 }
