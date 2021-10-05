@@ -7,6 +7,7 @@ import { TextField } from "@mui/material";
 import Button from "../../components/Button/Button";
 import { Link, useHistory } from "react-router-dom";
 import { AuthContext } from "../../context/Auth/Auth";
+import { saveSession } from "../../services/auth-service";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -23,9 +24,9 @@ const reducer = (state, action) => {
 
 function GetStarted() {
   const history = useHistory();
-  const { isAuth , setAuth} = React.useContext(AuthContext);
+  const { isAuth, setAuth } = React.useContext(AuthContext);
   React.useLayoutEffect(() => {
-    console.log(isAuth)
+    console.log(isAuth);
     if (isAuth) {
       history.replace("/home");
     }
@@ -55,6 +56,7 @@ function GetStarted() {
       name: name,
       occupation: occupation || "Awesome guest",
     };
+    saveSession();
     setAuth(true);
     goHome();
   };

@@ -9,7 +9,7 @@ function Home() {
   const history = useHistory();
   const { isAuth } = useContext(AuthContext);
   useLayoutEffect(() => {
-    if (!isAuth) {
+    if (isAuth === false) {
       return history.replace("/get-started");
     }
   });
