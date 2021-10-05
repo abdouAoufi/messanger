@@ -4,11 +4,14 @@ import Home from "../pages/Home/Home";
 import GetStarted from "../pages/Get-started/GetStarted";
 import Setup from "../pages/Setup/Setup";
 import { AuthContextProvider } from "../context/Auth/Auth";
+import { createBrowserHistory } from "history";
+
+var hist = createBrowserHistory();
 
 function App() {
   return (
     <AuthContextProvider>
-      <Router>
+      <Router history={hist}>
         <Switch>
           <Route path="/home" component={Home} />
           <Route path="/setup" component={Setup} />

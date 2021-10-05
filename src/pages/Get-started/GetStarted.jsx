@@ -6,9 +6,18 @@ import { Typography } from "@mui/material";
 import Title from "../../components/Typography/Title";
 import Button from "../../components/Button/Button";
 import { APP_DESCRIPTION } from "../../assests";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { AuthContext } from "../../context/Auth/Auth";
 
 function GetStarted() {
+  const history = useHistory();
+  const { isAuth } = React.useContext(AuthContext);
+  React.useLayoutEffect(() => {
+    if (isAuth) {
+      history.replace("/home");
+    }
+  });
+
   return (
     <Box
       sx={{
