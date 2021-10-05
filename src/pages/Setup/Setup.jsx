@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { Typography } from "@mui/material";
 import { TextField } from "@mui/material";
 import Button from "../../components/Button/Button";
+import { useHistory } from "react-router-dom";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -20,6 +21,7 @@ const reducer = (state, action) => {
 };
 
 function GetStarted() {
+  const history = useHistory();
   const initialState = {
     error: false,
     errorMessage: "",
@@ -45,7 +47,11 @@ function GetStarted() {
       name: name,
       occupation: occupation || "Awesome guest",
     };
-    console.log(userInformation);
+    goHome();
+  };
+
+  const goHome = () => {
+    history.replace("/home");
   };
 
   return (
