@@ -4,6 +4,7 @@ import Navbar from "./Navbar/Navbar";
 import SearchBar from "./Searchbar/SearchBar";
 import { Separator } from "../Separator/Separator";
 import ProfileContainer from "../Profile-container/ProfileContainer";
+import { Link } from "react-router-dom";
 
 export default function LeftSideBar() {
   return (
@@ -16,7 +17,7 @@ export default function LeftSideBar() {
         minWidth: { xs: "100px", lg: "360px" },
         maxWidth: "380px",
         display: "flex",
-        flexGrow : 1,
+        flexGrow: 1,
         px: "16px",
         flexDirection: "column",
         justifyContent: "start",
@@ -38,7 +39,9 @@ export default function LeftSideBar() {
         <SearchBar />
         <Separator />
       </Box>
-      <ProfileContainer />
+      <Link to="/home/chat">
+        <ProfileContainer />
+      </Link>
     </Box>
   );
 }

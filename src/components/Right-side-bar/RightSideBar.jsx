@@ -1,17 +1,16 @@
 import React from "react";
-import Box from "@mui/material/Box";
-import Navbar from "./Navbar/Navbar";
-import Chat from "./Chat/Chat";
-import BottomBar from "./Chat/Bottom-bar/BottomBar";
+import ChatHolder from "./ChatHolder/ChatHolder";
 import styled from "styled-components";
+import { Switch, Route, useHistory, Link } from "react-router-dom";
 
 export default function RightSideBar() {
   return (
     <Wrapper>
       <InnerWrapper>
-        <Navbar />
-        <Chat />
-        <BottomBar />
+        <Switch>
+          <Route path="/home/chat" component={ChatHolder} />
+          <Route>hi</Route>
+        </Switch>
       </InnerWrapper>
     </Wrapper>
   );
@@ -19,6 +18,7 @@ export default function RightSideBar() {
 
 const Wrapper = styled.div`
   flex-grow: 1;
+  min-width: 70vw;
   height: 100%;
   overflow-y: scroll;
 `;
