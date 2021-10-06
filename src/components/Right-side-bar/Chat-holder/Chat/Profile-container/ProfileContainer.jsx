@@ -8,26 +8,32 @@ export default function ProfileContainer({ name, occupation }) {
     <Box sx={{ mt: 12, width: "100%" }}>
       <ProfileWrapper>
         <Avatar firstLetter={name[0] ? name[0].toUpperCase() : "A"} />
-        <Box
-          sx={{
-            typographie: "body1",
-            mt: 1.4,
-            color: "#050505",
-            fonWeight: "medium",
-          }}
-        >
-          {name && <span>{name}</span>}
-        </Box>
-        <Box
-          sx={{
-            typographie: "body2",
-            mt: 0.6,
-            fontWeight: "regular",
-            color: "#7e7474",
-          }}
-        >
-          {occupation && <span>{occupation}</span>}
-        </Box>
+        <div>
+          {name && (
+            <Box
+              sx={{
+                textAlign: "center",
+                typographie: "body2",
+                mt: 1.4,
+                color: "#050505",
+              }}
+            >
+              abdou
+            </Box>
+          )}
+          {occupation && (
+            <Box
+              sx={{
+                typographie: "body2",
+                mt: 0.6,
+                fontWeight: "regular",
+                color: "#7e7474",
+              }}
+            >
+              {occupation}
+            </Box>
+          )}
+        </div>
       </ProfileWrapper>
     </Box>
   );
@@ -35,7 +41,6 @@ export default function ProfileContainer({ name, occupation }) {
 
 const ProfileWrapper = styled.div`
   display: flex;
-  width: 100%;
   flex-direction: column;
   place-items: center;
   justify-content: center;

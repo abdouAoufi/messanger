@@ -8,7 +8,7 @@ export default function ProfileContainer() {
   return (
     <>
       <ProfileContainerr>
-        <Avatar firstLetter="A" size="mini" />
+        <Avatar margin="tiny" firstLetter="A" size="mini" />
         <Box sx={{ typography: "body1" }}>Aoufi Abderahmane</Box>
       </ProfileContainerr>
     </>

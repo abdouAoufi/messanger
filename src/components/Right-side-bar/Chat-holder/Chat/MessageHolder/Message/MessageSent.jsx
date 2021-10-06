@@ -19,13 +19,11 @@ const Messagee = styled.div`
   background-color: #364f6b;
   font-weight: medium;
   color: #ffffff;
+  margin-right: 8px;
 `;
 
 const Wrapper = styled.div`
   width: 100%;
-  float: right;
-  clear : both;
   display: flex;
   flex-direction: row-reverse;
-  overflow-y: auto;
 `;

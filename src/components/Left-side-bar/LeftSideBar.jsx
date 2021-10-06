@@ -4,7 +4,7 @@ import Navbar from "./Navbar/Navbar";
 import SearchBar from "./Searchbar/SearchBar";
 import { Separator } from "../Separator/Separator";
 import ProfileContainer from "../Profile-container/ProfileContainer";
-import { Link } from "react-router-dom";
+
 
 export default function LeftSideBar() {
   return (
@@ -39,9 +39,9 @@ export default function LeftSideBar() {
         <SearchBar />
         <Separator />
       </Box>
-      <Link to="/home/chat">
-        <ProfileContainer  />
-      </Link>
+      <ProfileContainer />
+      <ProfileContainer />
+      <ProfileContainer />
     </Box>
   );
 }

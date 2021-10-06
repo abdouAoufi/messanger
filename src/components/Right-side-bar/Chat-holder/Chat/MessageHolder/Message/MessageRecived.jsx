@@ -5,7 +5,7 @@ import Avatar from "../../../../../Avatar/Avatar";
 export default function MessageRecived({ reciver }) {
   return (
     <Wrapper>
-      <Avatar size="tiny" firstLetter="A" />
+      <Avatar margin="tiny" size="tiny" firstLetter="A" />
       <Messagee>Hello its me here we can have </Messagee>
     </Wrapper>
   );
