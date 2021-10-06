@@ -1,7 +1,7 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import styled from "styled-components";
-import Avatar from "../../../Avatar/Avatar";
+import Avatar from "../../../../Avatar/Avatar";
 
 
 export default function ProfileContainer() {

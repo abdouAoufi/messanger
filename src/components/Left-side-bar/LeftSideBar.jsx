@@ -40,7 +40,7 @@ export default function LeftSideBar() {
         <Separator />
       </Box>
       <Link to="/home/chat">
-        <ProfileContainer />
+        <ProfileContainer  />
       </Link>
     </Box>
   );

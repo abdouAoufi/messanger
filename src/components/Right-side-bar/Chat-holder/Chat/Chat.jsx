@@ -7,9 +7,9 @@ import BottomBar from "./Bottom-bar/BottomBar";
 export default function Chat() {
   return (
     <Wrapper>
-      <ProfileContainer />
+      <ProfileContainer name="Lyes" occupation="Developer" />
       <MessageHolder />
-    </Wrapper> 
+    </Wrapper>
   );
 }
 

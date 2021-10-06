@@ -24,7 +24,7 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   background-color: white;
-  position: sticky;
+  position: absolute;
   bottom: 0;
   right: 0;
   left: 0;

@@ -3,11 +3,11 @@ import styled from "styled-components";
 import Box from "@mui/material/Box";
 import Avatar from "../../../../Avatar/Avatar";
 
-export default function ProfileContainer() {
+export default function ProfileContainer({ name, occupation }) {
   return (
     <Box sx={{ mt: 12, width: "100%" }}>
       <ProfileWrapper>
-        <Avatar firstLetter="A" />
+        <Avatar firstLetter={name[0] ? name[0].toUpperCase() : "A"} />
         <Box
           sx={{
             typographie: "body1",
@@ -16,7 +16,7 @@ export default function ProfileContainer() {
             fonWeight: "medium",
           }}
         >
-          Aoufi Abderahmnae
+          {name && <span>{name}</span>}
         </Box>
         <Box
           sx={{
@@ -26,7 +26,7 @@ export default function ProfileContainer() {
             color: "#7e7474",
           }}
         >
-          New friend
+          {occupation && <span>{occupation}</span>}
         </Box>
       </ProfileWrapper>
     </Box>

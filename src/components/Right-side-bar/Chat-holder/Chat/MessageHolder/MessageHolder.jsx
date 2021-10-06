@@ -4,23 +4,24 @@ import MessageSent from "./Message/MessageSent";
 import MessageRecived from "./Message/MessageRecived";
 export default function MessageHolder() {
   const getScroll = () => {
-   const messageHolder = document.getElementById("ChatWrapper");
-   messageHolder.scrollBy(0,10)
+    const messageHolder = document.getElementById("ChatWrapper");
+    messageHolder.scrollBy(0, 10);
   };
   return (
     <ChatWrapper onClick={getScroll} id="ChatWrapper">
       <MessageSent />
       <MessageRecived />
-      <MessageRecived />
-      <MessageRecived />
-      <MessageRecived />
-      <MessageRecived />
-      <MessageRecived />
+      <MessageSent />
       <MessageSent />
       <MessageRecived />
+      <MessageSent />
+      <MessageSent />
       <MessageRecived />
+      <MessageSent />
+      <MessageSent />
       <MessageRecived />
-      <MessageRecived />
+      <MessageSent />
+      <MessageSent />
       <MessageRecived />
       <MessageSent />
     </ChatWrapper>

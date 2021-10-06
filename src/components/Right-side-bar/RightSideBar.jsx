@@ -1,7 +1,8 @@
 import React from "react";
-import ChatHolder from "./ChatHolder/ChatHolder";
+import ChatHolder from "./Chat-holder/ChatHolder";
 import styled from "styled-components";
 import { Switch, Route, useHistory, Link } from "react-router-dom";
+import YourProfile from "./Your-profile/YourProfile.jsx";
 
 export default function RightSideBar() {
   return (
@@ -9,7 +10,9 @@ export default function RightSideBar() {
       <InnerWrapper>
         <Switch>
           <Route path="/home/chat" component={ChatHolder} />
-          <Route>hi</Route>
+          <Route>
+            <YourProfile />
+          </Route>
         </Switch>
       </InnerWrapper>
     </Wrapper>
