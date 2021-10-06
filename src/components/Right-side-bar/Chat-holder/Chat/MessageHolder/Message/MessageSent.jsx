@@ -27,4 +27,5 @@ const Wrapper = styled.div`
   clear : both;
   display: flex;
   flex-direction: row-reverse;
+  overflow-y: auto;
 `;

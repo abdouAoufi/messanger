@@ -14,5 +14,8 @@ export default function Chat() {
 }
 
 const Wrapper = styled.div`
-  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+ 
 `;

@@ -22,6 +22,8 @@ export default function RightSideBar() {
 const Wrapper = styled.div`
   flex-grow: 1;
   min-width: 70vw;
+  max-height: 100vh;
+  min-height: 100vh ;
   height: 100%;
   overflow-y: scroll;
 `;

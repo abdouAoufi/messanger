@@ -11,26 +11,21 @@ export default function MessageHolder() {
     <ChatWrapper onClick={getScroll} id="ChatWrapper">
       <MessageSent />
       <MessageRecived />
-      <MessageSent />
-      <MessageSent />
       <MessageRecived />
       <MessageSent />
-      <MessageSent />
+      <MessageRecived />
       <MessageRecived />
       <MessageSent />
-      <MessageSent />
+      <MessageRecived />
       <MessageRecived />
       <MessageSent />
-      <MessageSent />
       <MessageRecived />
-      <MessageSent />
+      <MessageRecived />
     </ChatWrapper>
   );
 }
 
 const ChatWrapper = styled.div`
   padding: 1rem 0.5rem;
-  align-items: center;
-  height: fit-content;
-  overflow-y: scroll;
+  overflow-y: auto;
 `;

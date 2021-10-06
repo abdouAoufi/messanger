@@ -24,10 +24,12 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   background-color: white;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
+  @media (min-width: 768px) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
 `;
 
 const MessageInputWrapper = styled.div`
