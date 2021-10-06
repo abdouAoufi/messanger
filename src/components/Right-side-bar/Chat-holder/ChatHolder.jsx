@@ -9,24 +9,31 @@ import { useParams, useHistory } from "react-router-dom";
 import Loading from "../../Loading";
 
 function ChatHolder() {
-  const userID = useParams().userID;
-  const history = useHistory();
-  useLayoutEffect(() => {
-    if (!userID) {
-      history.replace("/home");
-    }
-  });
   const [currentUser, setCurrentUser] = useState({});
   const [loading, setLoading] = useState(true);
+  const userID = useParams().userID;
+  const history = useHistory();
+
   useEffect(() => {
+    console.log("update");
     getUser();
-  }, []);
+    return function () {
+      setLoading(true);
+      setCurrentUser({});
+    };
+  }, [userID]);
 
   const getUser = () => {
+    if (!userID) {
+      return history.push("/home");
+    }
     // TODO fake call to API
     setTimeout(() => {
       setLoading(false);
-      setCurrentUser({ name: "Lyes", occupation: "Student" });
+      setCurrentUser({
+        name: "Abdou",
+        occupation: "Student",
+      });
     }, 1000);
   };
 
@@ -41,7 +48,7 @@ function ChatHolder() {
       <Navbar name={currentUser.name || "user"} />
       <ChatWrapper>
         {loading ? (
-          <Loading mt="6"/>
+          <Loading mt="6" />
         ) : (
           <Box component="div">
             <ProfileContainer

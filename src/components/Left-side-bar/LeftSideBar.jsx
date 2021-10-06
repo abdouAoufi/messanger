@@ -50,11 +50,18 @@ export default function LeftSideBar() {
         {loadingUsers ? (
           <Loading />
         ) : (
-          <ProfileContainer
-            name="Lyes hamitouch"
-            lastMessage="Wrk"
-            id="f4hdas"
-          />
+          <>
+            <ProfileContainer
+              name="Lyes hamitouch"
+              lastMessage="Wrk"
+              id="f4hdas"
+            />
+            <ProfileContainer
+              name="Lyes hamitouch"
+              lastMessage="Wrk"
+              id="fadf"
+            />
+          </>
         )}
       </Box>
     </Box>
