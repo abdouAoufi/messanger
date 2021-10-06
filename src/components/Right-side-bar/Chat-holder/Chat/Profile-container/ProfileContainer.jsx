@@ -7,7 +7,7 @@ export default function ProfileContainer({ name, occupation }) {
   return (
     <Box sx={{ mt: 12, width: "100%" }}>
       <ProfileWrapper>
-        <Avatar firstLetter={name[0] ? name[0].toUpperCase() : "A"} />
+        <Avatar firstLetter={name[0] ? name[0].toUpperCase() : "?"} />
         <div>
           {name && (
             <Box
@@ -18,7 +18,7 @@ export default function ProfileContainer({ name, occupation }) {
                 color: "#050505",
               }}
             >
-              abdou
+              {name}
             </Box>
           )}
           {occupation && (
@@ -28,6 +28,7 @@ export default function ProfileContainer({ name, occupation }) {
                 mt: 0.6,
                 fontWeight: "regular",
                 color: "#7e7474",
+                textAlign: "center",
               }}
             >
               {occupation}

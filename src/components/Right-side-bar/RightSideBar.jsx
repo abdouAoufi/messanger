@@ -9,7 +9,7 @@ export default function RightSideBar() {
     <Wrapper>
       <InnerWrapper>
         <Switch>
-          <Route path="/home/chat" component={ChatHolder} />
+          <Route path="/home/chat/:userID" component={ChatHolder} />
           <Route>
             <YourProfile />
           </Route>

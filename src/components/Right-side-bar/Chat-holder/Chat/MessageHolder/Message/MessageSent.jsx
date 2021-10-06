@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import Avatar from "../../../../../Avatar/Avatar";
 
-export default function MessageSent({ last }) {
+export default function MessageSent({ text }) {
   return (
     <Wrapper>
-      <Messagee>Hello</Messagee>
+      <Messagee>{text}</Messagee>
     </Wrapper>
   );
 }

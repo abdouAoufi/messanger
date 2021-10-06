@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import Navbar from "./Navbar/Navbar";
 import SearchBar from "./Searchbar/SearchBar";
 import { Separator } from "../Separator/Separator";
 import ProfileContainer from "../Profile-container/ProfileContainer";
-
-
+import { Typography } from "@mui/material";
+import { TYPO_COLORS } from "../../assests";
+import Loading from "../Loading";
 export default function LeftSideBar() {
+  const [loadingUsers, setLoadingUsers] = useState(true);
+  const getUsers = () => {
+    setTimeout(() => setLoadingUsers(false), 2000);
+  };
+  useEffect(getUsers, []);
+
   return (
     <Box
       sx={{
@@ -39,9 +46,17 @@ export default function LeftSideBar() {
         <SearchBar />
         <Separator />
       </Box>
-      <ProfileContainer />
-      <ProfileContainer />
-      <ProfileContainer />
+      <Box width="100%">
+        {loadingUsers ? (
+          <Loading />
+        ) : (
+          <ProfileContainer
+            name="Lyes hamitouch"
+            lastMessage="Wrk"
+            id="f4hdas"
+          />
+        )}
+      </Box>
     </Box>
   );
 }

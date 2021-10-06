@@ -9,18 +9,8 @@ export default function MessageHolder() {
   };
   return (
     <ChatWrapper onClick={getScroll} id="ChatWrapper">
-      <MessageSent />
-      <MessageRecived />
-      <MessageRecived />
-      <MessageSent />
-      <MessageRecived />
-      <MessageRecived />
-      <MessageSent />
-      <MessageRecived />
-      <MessageRecived />
-      <MessageSent />
-      <MessageRecived />
-      <MessageRecived />
+      {/* <MessageSent text="Wach kho wrak " />
+      <MessageRecived text="Kount flafac ani jay" /> */}
     </ChatWrapper>
   );
 }

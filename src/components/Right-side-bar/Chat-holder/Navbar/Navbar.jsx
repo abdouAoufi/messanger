@@ -3,7 +3,7 @@ import styled from "styled-components";
 import ProfileContainer from "./ProfileContainer/ProfileContainer";
 import MainIcons from "./MainIcons/MainIcons";
 
-export default function Navbar() {
+export default function Navbar({}) {
   return (
     <Wrapper>
       <ProfileContainer />
