@@ -2,6 +2,7 @@ import React from "react";
 import Box from "@mui/material/Box";
 import styled from "styled-components";
 import MainIcons from "./MainIcon/MainIcon";
+import { IconButton } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 
@@ -11,9 +12,13 @@ export default function BottomBar() {
       <MainIcons />
       <MessageInputWrapper>
         <MessageInput placeholder="Aa" />
-        <SendIcon sx={iconConfiguratoin} />
+        <IconButton>
+          <SendIcon sx={{ color: "#00b4b9", mx: 0.3 }} />
+        </IconButton>
       </MessageInputWrapper>
-      <ThumbUpIcon sx={iconConfiguratoin} />
+      <IconButton sx={{ color: "#00b4b9", mx: 0.3 , flexGrow : 1 }}>
+        <ThumbUpIcon />
+      </IconButton>
     </Wrapper>
   );
 }
@@ -36,7 +41,7 @@ const MessageInputWrapper = styled.div`
   height: 75%;
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 80%;
   justify-content: space-between;
   background-color: #e4e4eb;
   border-radius: 2rem;

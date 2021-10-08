@@ -1,21 +1,18 @@
 import React from "react";
-import styled from "styled-components";
 import ImageIcon from "@mui/icons-material/Image";
 import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
+import { IconButton } from "@mui/material";
+import { Box } from "@mui/system";
 
 export default function MainIcon() {
   return (
-    <Wrapper>
-      <ImageIcon sx={iconConfiguratoin} />
-      <EmojiEmotionsIcon sx={iconConfiguratoin} />
-    </Wrapper>
+    <Box sx={{ display: "flex", alignItems: "center", height: "75%" }}>
+      <IconButton sx={{ color: "#00b4b9" }}>
+        <ImageIcon />
+      </IconButton>
+      <IconButton sx={{ color: "#00b4b9" }}>
+        <EmojiEmotionsIcon />
+      </IconButton>
+    </Box>
   );
 }
-
-const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  height: 75%;
-`;
-
-const iconConfiguratoin = { color: "#00b4b0", mx: 0.6 };

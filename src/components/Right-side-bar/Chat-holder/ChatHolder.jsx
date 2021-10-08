@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import Navbar from "./Navbar/Navbar";
+import Navbar from "./Chat/Navbar/Navbar";
 import BottomBar from "./Chat/Bottom-bar/BottomBar";
 import Box from "@mui/material/Box";
 import ProfileContainer from "./Chat/Profile-container/ProfileContainer";

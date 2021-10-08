@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import styled from "styled-components";
-import Avatar from "../../../../Avatar/Avatar";
-import { ChatContext } from "../../../../../context/Chat/Chat";
+import Avatar from "../../../../../Avatar/Avatar";
+import { ChatContext } from "../../../../../../context/Chat/Chat";
 
 const ProfileContainer = () => {
   const { currentUser } = useContext(ChatContext);
