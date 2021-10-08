@@ -13,3 +13,5 @@ export const BG_COLOR = Object.freeze({
   white: "#ffffff",
   grey: "#f0f0f0",
 });
+
+export const randomUserList = ["Ammar", "Lyes", "Hamza", "Adel", "Yacine"];

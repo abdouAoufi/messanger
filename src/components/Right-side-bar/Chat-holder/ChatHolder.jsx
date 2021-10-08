@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect, useEffect } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Navbar from "./Navbar/Navbar";
 import BottomBar from "./Chat/Bottom-bar/BottomBar";
 import Box from "@mui/material/Box";
@@ -7,18 +7,21 @@ import MessageHolder from "./Chat/MessageHolder/MessageHolder";
 import styled from "styled-components";
 import { useParams, useHistory } from "react-router-dom";
 import Loading from "../../Loading";
+import { ChatContext } from "../../../context/Chat/Chat";
+import { randomUserList } from "../../../assests";
 
 function ChatHolder() {
-  const [currentUser, setCurrentUser] = useState({});
+  const [currentUser, setCurentStateUser] = useState({});
   const [loading, setLoading] = useState(true);
+  const { setCurrentUser } = useContext(ChatContext);
   const userID = useParams().userID;
   const history = useHistory();
 
   useEffect(() => {
-    console.log("update");
     getUser();
     return function () {
       setLoading(true);
+      setCurentStateUser({});
       setCurrentUser({});
     };
   }, [userID]);
@@ -29,9 +32,18 @@ function ChatHolder() {
     }
     // TODO fake call to API
     setTimeout(() => {
+      console.log(
+        randomUserList[Math.floor(Math.random * randomUserList.length)]
+      );
       setLoading(false);
+      const name =
+        randomUserList[Math.floor(Math.random() * randomUserList.length)];
+      setCurentStateUser({
+        name,
+        occupation: "Student",
+      });
       setCurrentUser({
-        name: "Abdou",
+        name,
         occupation: "Student",
       });
     }, 1000);
