@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect, useRef } from "react";
 import Navbar from "./Chat/Navbar/Navbar";
 import BottomBar from "./Chat/Bottom-bar/BottomBar";
 import Box from "@mui/material/Box";
@@ -11,11 +11,16 @@ import { ChatContext } from "../../../context/Chat/Chat";
 import { randomUserList } from "../../../assests";
 
 function ChatHolder() {
+  const sendMessageRef = useRef(null);
   const [currentUser, setCurentStateUser] = useState({});
+  const [messageToSend, setMessageToSend] = useState("");
   const [loading, setLoading] = useState(true);
   const { setCurrentUser } = useContext(ChatContext);
   const userID = useParams().userID;
   const history = useHistory();
+  const sendMessage = (message) => {
+    sendMessageRef.current.sendMessage(message);
+  };
 
   useEffect(() => {
     getUser();
@@ -64,11 +69,11 @@ function ChatHolder() {
               name={currentUser.name || "uknwon user"}
               occupation={currentUser.occupation || "uknwon user"}
             />
-            <MessageHolder />
+            <MessageHolder ref={sendMessageRef} />
+            <BottomBar sendMessage={sendMessage} />
           </Box>
         )}
       </ChatWrapper>
-      <BottomBar />
     </Box>
   );
 }

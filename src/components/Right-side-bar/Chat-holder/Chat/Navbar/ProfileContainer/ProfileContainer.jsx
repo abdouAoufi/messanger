@@ -7,8 +7,6 @@ import { ChatContext } from "../../../../../../context/Chat/Chat";
 const ProfileContainer = () => {
   const { currentUser } = useContext(ChatContext);
 
-  console.log(currentUser.name || "null");
-
   return (
     <>
       {currentUser && (
