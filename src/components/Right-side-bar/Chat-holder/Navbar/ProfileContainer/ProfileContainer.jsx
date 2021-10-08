@@ -7,11 +7,13 @@ import { ChatContext } from "../../../../../context/Chat/Chat";
 const ProfileContainer = () => {
   const { currentUser } = useContext(ChatContext);
 
+  console.log(currentUser.name || "null");
+
   return (
     <>
       {currentUser && (
         <ProfileContainerr>
-          <Avatar margin="tiny" firstLetter="s" size="mini" />
+          <Avatar margin="tiny" firstLetter={currentUser.name[0]} size="mini" />
           <Box sx={{ typography: "body1" }}>{currentUser.name}</Box>
         </ProfileContainerr>
       )}

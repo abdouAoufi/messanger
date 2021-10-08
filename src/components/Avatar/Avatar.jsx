@@ -2,7 +2,6 @@ import React from "react";
 import Avatar from "@mui/material/Avatar";
 
 export default function AvatarContainer({ firstLetter, size, margin }) {
-  
   return (
     <>
       <Avatar
@@ -13,7 +12,7 @@ export default function AvatarContainer({ firstLetter, size, margin }) {
           mr: margin === "tiny" ? 1.0 : margin === "medium" ? 1.5 : 0,
         }}
       >
-        {firstLetter}
+        {firstLetter || "?"}
       </Avatar>
     </>
   );

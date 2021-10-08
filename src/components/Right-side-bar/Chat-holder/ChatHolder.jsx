@@ -22,7 +22,7 @@ function ChatHolder() {
     return function () {
       setLoading(true);
       setCurentStateUser({});
-      setCurrentUser({});
+      setCurrentUser({ name: "Loading ..", occupation: "Loading" });
     };
   }, [userID]);
 
@@ -32,9 +32,6 @@ function ChatHolder() {
     }
     // TODO fake call to API
     setTimeout(() => {
-      console.log(
-        randomUserList[Math.floor(Math.random * randomUserList.length)]
-      );
       setLoading(false);
       const name =
         randomUserList[Math.floor(Math.random() * randomUserList.length)];
@@ -46,7 +43,7 @@ function ChatHolder() {
         name,
         occupation: "Student",
       });
-    }, 1000);
+    }, 1400);
   };
 
   return (
