@@ -4,6 +4,8 @@ import MessageSent from "./Message/MessageSent";
 import MessageRecived from "./Message/MessageRecived";
 const MessageHolder = forwardRef((props, ref) => {
   const [messagesToBeSend, setMessagesToBeSent] = useState([]);
+  const [messageRecived, setMessageRecived] = useState([]);
+  const [lastMessage , setLastMessaage] = useState([])
   const getScroll = () => {
     const messageHolder = document.getElementById("ChatWrapper");
     messageHolder.scrollBy(0, 10);
@@ -14,10 +16,12 @@ const MessageHolder = forwardRef((props, ref) => {
       let messagesList = [...messagesToBeSend];
       messagesList.push(message);
       setMessagesToBeSent(messagesList);
-      console.log(messagesList);
     },
     reciveMessage(message) {
-      console.log(message);
+      let messagesList = [...messageRecived];
+      messagesList.push(message);
+      setMessageRecived(messagesList);
+      console.log(messagesList);
     },
   }));
   return (
@@ -25,15 +29,16 @@ const MessageHolder = forwardRef((props, ref) => {
       {messagesToBeSend.map((message, index) => (
         <MessageSent key={index} text={message} />
       ))}
-
-      {/* <MessageRecived text="Kount flafac ani jay" />   */}
+      {messageRecived.map((message, index) => (
+        <MessageRecived key={index} text={message} />
+      ))}
     </ChatWrapper>
   );
 });
 
 const ChatWrapper = styled.div`
   padding: 1rem 0.5rem;
-  
+
   overflow-y: auto;
 `;
 

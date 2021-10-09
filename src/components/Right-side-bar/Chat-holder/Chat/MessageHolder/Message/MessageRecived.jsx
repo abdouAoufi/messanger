@@ -26,4 +26,5 @@ const Wrapper = styled.div`
   float: left;
   display: flex;
   align-items: center;
+  width: 100%;
 `;

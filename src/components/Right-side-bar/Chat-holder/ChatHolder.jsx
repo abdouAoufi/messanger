@@ -11,7 +11,7 @@ import { ChatContext } from "../../../context/Chat/Chat";
 import { randomUserList } from "../../../assests";
 
 function ChatHolder() {
-  const sendMessageRef = useRef(null);
+  const messageRef = useRef(null);
   const [currentUser, setCurentStateUser] = useState({});
   const [messageToSend, setMessageToSend] = useState("");
   const [loading, setLoading] = useState(true);
@@ -19,15 +19,18 @@ function ChatHolder() {
   const userID = useParams().userID;
   const history = useHistory();
   const sendMessage = (message) => {
-    sendMessageRef.current.sendMessage(message);
+    messageRef.current.sendMessage(message);
+    setTimeout(() => reciveMessage(message), 1000);
+  };
+  const reciveMessage = (message) => {
+    // TODO FAKE API
+    messageRef.current.reciveMessage(message);
   };
 
   useEffect(() => {
     getUser();
     return function () {
-      setLoading(true);
-      setCurentStateUser({});
-      setCurrentUser({ name: "Loading ..", occupation: "Loading" });
+      resetStates();
     };
   }, [userID]);
 
@@ -51,6 +54,12 @@ function ChatHolder() {
     }, 1400);
   };
 
+  const resetStates = () => {
+    setLoading(true);
+    setCurentStateUser({});
+    setCurrentUser({ name: "Loading ..", occupation: "Loading" });
+  };
+
   return (
     <Box
       component="div"
@@ -69,7 +78,7 @@ function ChatHolder() {
               name={currentUser.name || "uknwon user"}
               occupation={currentUser.occupation || "uknwon user"}
             />
-            <MessageHolder ref={sendMessageRef} />
+            <MessageHolder ref={messageRef} />
             <BottomBar sendMessage={sendMessage} />
           </Box>
         )}
