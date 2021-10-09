@@ -3,9 +3,9 @@ import styled from "styled-components";
 import MessageSent from "./Message/MessageSent";
 import MessageRecived from "./Message/MessageRecived";
 const MessageHolder = forwardRef((props, ref) => {
-  const [messagesToBeSend, setMessagesToBeSent] = useState([]);
-  const [messageRecived, setMessageRecived] = useState([]);
-  const [lastMessage , setLastMessaage] = useState([])
+  // const [messagesToBeSend, setMessagesToBeSent] = useState([]);
+  // const [messageRecived, setMessageRecived] = useState([]);
+  const [messages, setMessages] = useState([]);
   const getScroll = () => {
     const messageHolder = document.getElementById("ChatWrapper");
     messageHolder.scrollBy(0, 10);
@@ -13,25 +13,25 @@ const MessageHolder = forwardRef((props, ref) => {
   useImperativeHandle(ref, () => ({
     // function returned we can execute outside ....
     sendMessage(message) {
-      let messagesList = [...messagesToBeSend];
-      messagesList.push(message);
-      setMessagesToBeSent(messagesList);
+      let messagesList = [...messages];
+      messagesList.push({ type: "send", text: message });
+      setMessages(messagesList);
     },
     reciveMessage(message) {
-      let messagesList = [...messageRecived];
-      messagesList.push(message);
-      setMessageRecived(messagesList);
+      let messagesList = [...messages];
+      messagesList.push({ type: "recive", text: message });
+      setMessages(messagesList);
       console.log(messagesList);
     },
   }));
   return (
     <ChatWrapper onClick={getScroll} id="ChatWrapper">
-      {messagesToBeSend.map((message, index) => (
-        <MessageSent key={index} text={message} />
-      ))}
-      {messageRecived.map((message, index) => (
-        <MessageRecived key={index} text={message} />
-      ))}
+      {messages.map((message, index) => {
+        if (message.type === "send") {
+          return <MessageSent text={message.text} key={index} />;
+        }
+        return <MessageRecived text={message.text} key={index} />;
+      })}
     </ChatWrapper>
   );
 });
