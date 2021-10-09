@@ -29,6 +29,8 @@ const Wrapper = styled.div`
   min-height: 100vh;
   height: 100%;
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
 `;
 
 const InnerWrapper = styled.div`

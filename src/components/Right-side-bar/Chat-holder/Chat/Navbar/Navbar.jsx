@@ -13,7 +13,7 @@ export default function Navbar() {
 }
 
 const Wrapper = styled.div`
-  max-width: 100%;
+  min-width: 100%;
   box-shadow: 3px 0 0 #c3c3c3;
   background-color: white;
   border-bottom: 1px solid #e4e6eb;

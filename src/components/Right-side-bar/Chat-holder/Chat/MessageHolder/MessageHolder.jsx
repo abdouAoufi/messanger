@@ -33,6 +33,7 @@ const MessageHolder = forwardRef((props, ref) => {
 
 const ChatWrapper = styled.div`
   padding: 1rem 0.5rem;
+  
   overflow-y: auto;
 `;
 

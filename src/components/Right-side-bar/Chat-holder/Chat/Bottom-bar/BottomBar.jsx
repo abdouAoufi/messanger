@@ -15,7 +15,7 @@ export default function BottomBar({ sendMessage }) {
 
   const handleMessage = () => {
     const message = inputRef.current.value;
-    if (message.length > 0) {
+    if (message.length > 0 && message.length < 100) {
       sendMessage(message);
       resetInput();
     }
@@ -41,17 +41,12 @@ export default function BottomBar({ sendMessage }) {
 }
 
 const Wrapper = styled.div`
-  width: 100%;
   height: 52px;
   display: flex;
   align-items: center;
   background-color: white;
-  @media (min-width: 768px) {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-  }
+  min-width: 100%;
+  
 `;
 
 const MessageInputWrapper = styled.div`

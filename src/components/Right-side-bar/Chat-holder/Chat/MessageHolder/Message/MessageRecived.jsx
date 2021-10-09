@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Avatar from "../../../../../Avatar/Avatar";
-import {TYPO_COLORS} from "../../../../../../assests"
+import { TYPO_COLORS } from "../../../../../../assests";
 
 export default function MessageRecived({ text }) {
   return (
@@ -23,7 +23,6 @@ const Messagee = styled.div`
 `;
 
 const Wrapper = styled.div`
-  width: 100%;
   float: left;
   display: flex;
   align-items: center;
