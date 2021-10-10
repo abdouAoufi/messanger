@@ -8,7 +8,7 @@ export default function Loading({ mt }) {
       variant="body1"
       sx={{ color: TYPO_COLORS.lessBlack, textAlign: "center", mt: +mt || 0 }}
     >
-      Loading users...
+      Loading ...
     </Typography>
   );
 }

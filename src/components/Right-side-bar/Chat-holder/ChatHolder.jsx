@@ -12,18 +12,21 @@ import { randomUserList } from "../../../assests";
 
 function ChatHolder() {
   const messageRef = useRef(null);
+  const history = useHistory();
   const [currentUser, setCurentStateUser] = useState({});
-  const [messageToSend, setMessageToSend] = useState("");
   const [loading, setLoading] = useState(true);
   const { setCurrentUser } = useContext(ChatContext);
   const userID = useParams().userID;
-  const history = useHistory();
+
+
   const sendMessage = (message) => {
+    if (!message) return;
     messageRef.current.sendMessage(message);
     setTimeout(() => reciveMessage(message), 1000);
   };
   const reciveMessage = (message) => {
     // TODO FAKE API
+    if (!message) return;
     messageRef.current.reciveMessage(message);
   };
 
@@ -75,8 +78,8 @@ function ChatHolder() {
         ) : (
           <Box component="div">
             <ProfileContainer
-              name={currentUser.name || "uknwon user"}
-              occupation={currentUser.occupation || "uknwon user"}
+              name={currentUser.name || "Uknwon user"}
+              occupation={currentUser.occupation || "Uknwon user"}
             />
             <MessageHolder ref={messageRef} />
             <BottomBar sendMessage={sendMessage} />
@@ -92,4 +95,4 @@ const ChatWrapper = styled.div`
   max-height: 80vh;
 `;
 
-export default ChatHolder;
+export { ChatHolder as default };
