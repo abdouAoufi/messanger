@@ -56,6 +56,11 @@ export default function LeftSideBar() {
               lastMessage="Wrk"
               id="f4hdas"
             />
+            <ProfileContainer
+              name="Hamza messoudane"
+              lastMessage="Wach"
+              id="fffs"
+            />
           </>
         )}
       </Box>

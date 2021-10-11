@@ -9,15 +9,14 @@ import { useParams, useHistory } from "react-router-dom";
 import Loading from "../../Loading";
 import { ChatContext } from "../../../context/Chat/Chat";
 import { randomUserList } from "../../../assests";
+import Chat from "./HOC/Chat";
 
-function ChatHolder() {
+function ChatHolder({ currentUser }) {
   const messageRef = useRef(null);
   const history = useHistory();
-  const [currentUser, setCurentStateUser] = useState({});
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const { setCurrentUser } = useContext(ChatContext);
   const userID = useParams().userID;
-
 
   const sendMessage = (message) => {
     if (!message) return;
@@ -31,37 +30,13 @@ function ChatHolder() {
   };
 
   useEffect(() => {
-    getUser();
-    return function () {
-      resetStates();
-    };
-  }, [userID]);
-
-  const getUser = () => {
-    if (!userID) {
-      return history.push("/home");
+    if(currentUser.name){
+      setLoading(false)
     }
-    // TODO fake call to API
-    setTimeout(() => {
-      setLoading(false);
-      const name =
-        randomUserList[Math.floor(Math.random() * randomUserList.length)];
-      setCurentStateUser({
-        name,
-        occupation: "Student",
-      });
-      setCurrentUser({
-        name,
-        occupation: "Student",
-      });
-    }, 1400);
-  };
-
-  const resetStates = () => {
-    setLoading(true);
-    setCurentStateUser({});
-    setCurrentUser({ name: "Loading ..", occupation: "Loading" });
-  };
+    return function () {
+      setLoading(true)
+    };
+  }, [currentUser]);
 
   return (
     <Box
@@ -71,7 +46,7 @@ function ChatHolder() {
         position: "relative",
       }}
     >
-      <Navbar name={currentUser.name || "user"} />
+      <Navbar name={currentUser.name || "loading"} />
       <ChatWrapper>
         {loading ? (
           <Loading mt="6" />
@@ -95,4 +70,5 @@ const ChatWrapper = styled.div`
   max-height: 80vh;
 `;
 
-export { ChatHolder as default };
+const ChatHoderWithUser = Chat(ChatHolder);
+export default ChatHoderWithUser;
