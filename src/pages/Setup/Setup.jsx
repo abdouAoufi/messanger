@@ -8,6 +8,7 @@ import Button from "../../components/Button/Button";
 import { Link, useHistory } from "react-router-dom";
 import { AuthContext } from "../../context/Auth/Auth";
 import { saveSession } from "../../services/auth-service";
+import { registerUser } from "../../api/auth";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -26,7 +27,6 @@ function GetStarted() {
   const history = useHistory();
   const { isAuth, setAuth, setUserInfo } = React.useContext(AuthContext);
   React.useLayoutEffect(() => {
-    console.log(isAuth);
     if (isAuth) {
       history.replace("/home");
     }
@@ -56,10 +56,16 @@ function GetStarted() {
       name: name,
       occupation: occupation || "Awesome guest",
     };
-    saveSession(userInformation);
-    setAuth(true);
-    setUserInfo(userInformation);
-    goHome();
+    registerUser(userInformation)
+      .then((response) => {
+        return response.json();
+      })
+      .then((user) => {
+        saveSession(user);
+        setUserInfo(user);
+        setAuth(true);
+        goHome();
+      });
   };
 
   const goHome = () => {

@@ -10,6 +10,8 @@ import Loading from "../../Loading";
 import { ChatContext } from "../../../context/Chat/Chat";
 import { randomUserList } from "../../../assests";
 import Chat from "./HOC/Chat";
+import { io } from "socket.io-client";
+const ENDPOINT = "http://127.0.0.1:8080";
 
 function ChatHolder({ currentUser }) {
   const messageRef = useRef(null);
@@ -30,11 +32,12 @@ function ChatHolder({ currentUser }) {
   };
 
   useEffect(() => {
-    if(currentUser.name){
-      setLoading(false)
+    if (currentUser.name) {
+      setLoading(false);
     }
+
     return function () {
-      setLoading(true)
+      setLoading(true);
     };
   }, [currentUser]);
 
